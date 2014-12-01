@@ -4,8 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>User</th>
-      <th>Description</th>
+      <th>Purchased by</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +13,7 @@
     <% @beers.each do |beer| %>
       <tr>
         <td><%= beer.name %></td>
-        <td><%= beer.user_id %></td>
-        <td><%= beer.description %></td>
+        <td><%= beer.purchased_by %></td>
         <td><%= link_to 'Show', beer %></td>
         <td><%= link_to 'Edit', edit_beer_path(beer) %></td>
         <td><%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

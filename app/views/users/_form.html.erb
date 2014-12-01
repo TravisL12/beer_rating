@@ -1,9 +1,8 @@
-<%= form_for(@beer, url: user_beers_path) do |f| %>
-  <% if @beer.errors.any? %>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
-
       <ul>
-      <% @beer.errors.full_messages.each do |message| %>
+      <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -15,4 +14,5 @@
     <%= f.text_field :name %>
     <%= f.submit %>
   </div>
+
 <% end %>

@@ -1,0 +1,33 @@
+<h1>Overall Beer List</h1>
+<p><%= link_to 'Back', root_path %></p>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Beer Number</th>
+      <th>Beer Name</th>
+      <th>Brought By</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @all_beers.each do |beer| %>
+      <tr>
+
+        <td><%= beer.id %></td>
+        <td><%= beer.name %></td>
+        <td><%= beer.user.name %></td>
+
+        <td>
+          <ul>
+            <% beer.scores do |score| %>
+              <li><%= score.rating %></li>
+            <% end %>
+          </ul>
+        </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>

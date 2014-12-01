@@ -1,0 +1,30 @@
+// Place all the styles related to the Page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+h3{ text-align: center; }
+.display-links{
+  position: relative;
+  border: 1px solid;
+  border-radius: 3px;
+  height: 180px;
+  width: 200px;
+  margin: 10px auto 0;
+  a{
+    position: absolute;
+    padding-top: 35%;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.main-page{
+  .display-links{
+    background: #97ede3;
+  }
+}
+.user-show{
+  .display-links{
+    background: #eda698;
+  }
+}

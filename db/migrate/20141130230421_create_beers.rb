@@ -3,7 +3,6 @@ class CreateBeers < ActiveRecord::Migration
     create_table :beers do |t|
       t.string :name
       t.integer :user_id
-      t.text :description
 
       t.timestamps
     end

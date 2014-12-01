@@ -1,0 +1,14 @@
+<div class='user-show'>
+  <h3>Start Drinking <%= @user.name %>!</h3>
+
+    <div class='col-md-6'>
+      <div class='display-links'><%= link_to 'Add Beers!', new_user_beer_path(@user.id) %></div>
+    </div>
+
+    <div class='col-md-6'>
+      <div class='display-links'>
+        <%= link_to 'Start Rating Beers!', user_scores_path(@user.id) %>
+      </div>
+    </div>
+
+</div>

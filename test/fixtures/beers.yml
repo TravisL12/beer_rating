@@ -2,10 +2,8 @@
 
 one:
   name: MyString
-  user_id: 1
-  description: MyText
+  purchased_by: MyString
 
 two:
   name: MyString
-  user_id: 1
-  description: MyText
+  purchased_by: MyString

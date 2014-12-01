@@ -1,0 +1,21 @@
+<%= form_for(@score, url: user_scores_path) do |f| %>
+  <% if @score.errors.any? %>
+    <div id="error_explanation">
+
+      <ul>
+      <% @score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label 'Beer Number' %>
+    <%= f.text_field :beer_id %><br>
+    <%= f.label :rating %>
+    <%= f.text_field :rating %><br>
+    <%= f.submit %>
+  </div>
+
+<% end %>

@@ -1,0 +1,25 @@
+<h1>Score Beers!</h1>
+<p><%= link_to 'Back', user_path(@user.id) %></p>
+<%= render 'form' %>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Beer Number</th>
+      <th>Name</th>
+      <th>Brought By</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scores.each do |score| %>
+      <tr>
+        <td class='col-md-2'><%= score.beer.id %></td>
+        <td class='col-md-2'><%= score.beer.name %></td>
+        <td class='col-md-2'><%= score.beer.user.name %></td>
+        <td class='col-md-6'><%= score.rating %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
