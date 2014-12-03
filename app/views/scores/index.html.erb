@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @scores.each do |score| %>
+    <% @scores.sort {|a,b| a.beer_id <=> b.beer_id }.each do |score| %>
       <tr>
         <td class='col-md-1'><%= score.beer.id %></td>
         <td class='col-md-2'><%= score.beer.name %></td>

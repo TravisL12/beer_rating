@@ -7,7 +7,8 @@
       <th>Beer Number</th>
       <th>Beer Name</th>
       <th>Brought By</th>
-      <th>Score</th>
+      <th>Scores</th>
+      <th>Overall Score</th>
     </tr>
   </thead>
 
@@ -15,17 +16,18 @@
     <% @all_beers.each do |beer| %>
       <tr>
 
-        <td><%= beer.id %></td>
-        <td><%= beer.name %></td>
-        <td><%= beer.user.name %></td>
+        <td class='col-md-1'><%= beer.id %></td>
+        <td class='col-md-3'><%= beer.name %></td>
+        <td class='col-md-3'><%= beer.user.name %></td>
 
-        <td>
+        <td class='col-md-4'>
           <ul>
-            <% beer.scores do |score| %>
+            <% beer.scores.each do |score| %>
               <li><%= score.rating %></li>
             <% end %>
           </ul>
         </td>
+        <td class='col-md-4'><%= beer.average %></td>
 
       </tr>
     <% end %>

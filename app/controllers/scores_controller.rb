@@ -36,6 +36,7 @@ class ScoresController < ApplicationController
         format.html { redirect_to user_scores_path, notice: 'Score was successfully created.' }
         format.json { render :show, status: :created, location: @score }
       else
+        @user = User.find(params[:user_id])
         format.html { render :new }
         format.json { render json: @score.errors, status: :unprocessable_entity }
       end
