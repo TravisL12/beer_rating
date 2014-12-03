@@ -1,17 +1,21 @@
 // Place all the styles related to the Page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h3{ text-align: center; }
+h2,h3{ text-align: center; }
+a{
+  font-size: 20px;
+  color: white;
+}
+
 .display-links{
-  position: relative;
   border: 1px solid;
   border-radius: 3px;
-  height: 180px;
+  height: 130px;
   width: 200px;
   margin: 10px auto 0;
   a{
-    position: absolute;
-    padding-top: 35%;
+    display: block;
+    padding-top: 25%;
     text-align: center;
     height: 100%;
     width: 100%;
@@ -26,5 +30,29 @@ h3{ text-align: center; }
 .user-show{
   .display-links{
     background: #eda698;
+  }
+}
+
+.user-table{
+  width: 100%;
+  tr{
+    button{
+      margin-bottom: 10px;
+      height: 50px;
+      min-width: 50%;
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media(max-width: 780px){
+  .user-table{
+    tr button{
+      min-width: 100%;
+    }
   }
 }
