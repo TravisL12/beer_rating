@@ -1,24 +1,25 @@
-<h1>Score Beers!</h1>
-<p><%= link_to 'Back', user_path(@user.id) %></p>
-<%= render 'form' %>
+<div class='rating-form'>
+  <%= render 'form' %>
+</div>
 
 <table class='table'>
   <thead>
     <tr>
-      <th>Beer Number</th>
-      <th>Name</th>
-      <th>Brought By</th>
-      <th>Score</th>
+      <th><small>Beer</small></th>
+      <th><small>Name</small></th>
+      <th><small>From</small></th>
+      <th><small>Score</small></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @scores.each do |score| %>
       <tr>
-        <td class='col-md-2'><%= score.beer.id %></td>
+        <td class='col-md-1'><%= score.beer.id %></td>
         <td class='col-md-2'><%= score.beer.name %></td>
         <td class='col-md-2'><%= score.beer.user.name %></td>
-        <td class='col-md-6'><%= score.rating %></td>
+        <td class='col-md-4'><%= link_to score.rating, edit_user_score_path(score.user_id, score.id) %></td>
       </tr>
     <% end %>
   </tbody>

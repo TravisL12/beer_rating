@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 h2,h3{ text-align: center; }
-a{
+button a{
   font-size: 20px;
   color: white;
 }
@@ -47,6 +47,13 @@ a{
       }
     }
   }
+}
+
+.rating-form{
+  padding: 10px 5% 5% 5%;
+  border: 1px solid;
+  border-radius: 4px;
+  margin-bottom: 5%;
 }
 
 @media(max-width: 780px){

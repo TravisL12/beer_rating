@@ -3,3 +3,22 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', user_path(@user.id) %>
+
+<h3>Your Beer (click to edit)</h3>
+<table class='user-table'>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.beers.sort {|a,b| a.id <=> b.id }.each do |beer| %>
+      <tr>
+        <td class='col-md-12 text-center'>
+          <button class='btn btn-success'><%= link_to "#{beer.name} (#{beer.id})", edit_user_beer_path(beer.user_id, beer.id) %></button>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

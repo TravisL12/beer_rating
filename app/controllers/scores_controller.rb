@@ -21,6 +21,8 @@ class ScoresController < ApplicationController
 
   # GET /scores/1/edit
   def edit
+    @user = User.find(params[:user_id])
+    @score = Score.find(params[:id])
   end
 
   # POST /scores
@@ -48,7 +50,8 @@ class ScoresController < ApplicationController
         format.html { redirect_to user_scores_path, notice: 'Score was successfully updated.' }
         format.json { render :show, status: :ok, location: @score }
       else
-        format.html { render :edit }
+        @user = User.find(params[:user_id])
+        format.html { render :edit, notice: 'Beer ID not found' }
         format.json { render json: @score.errors, status: :unprocessable_entity }
       end
     end

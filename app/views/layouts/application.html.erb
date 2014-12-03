@@ -9,6 +9,16 @@
 </head>
 <body>
 
+<nav>
+  <ul>
+    <li><%= link_to 'Home', root_path %></li>
+    <% if @user && @user.id != nil %>
+      <li><%= link_to 'Change Account', users_path %> </li>
+      <li><%= link_to 'Add Beers!', new_user_beer_path(@user.id) %></li>
+      <li><%= link_to 'Rate Beers!', user_scores_path(@user.id) %> </li>
+    <% end %>
+  </ul>
+</nav>
 <div class='container'>
   <%= yield %>
 </div>
