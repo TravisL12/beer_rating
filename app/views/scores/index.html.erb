@@ -1,4 +1,5 @@
 <div class='rating-form'>
+  <h5>Enter a Score!</h5>
   <%= render 'form' %>
 </div>
 
@@ -7,19 +8,17 @@
     <tr>
       <th><small>Beer</small></th>
       <th><small>Name</small></th>
-      <th><small>From</small></th>
       <th><small>Score</small></th>
       <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @scores.sort {|a,b| a.beer_id <=> b.beer_id }.each do |score| %>
+    <% @scores.each do |score| %>
       <tr>
-        <td class='col-md-0'><%= score.beer.id %></td>
-        <td class='col-md-4'><%= score.beer.name %></td>
-        <td class='col-md-4'><%= score.beer.user.name %></td>
-        <td class='col-md-4'><%= link_to score.rating, edit_user_score_path(score.user_id, score.id) %></td>
+        <td class='col-md-1'><%= score.beer.id %></td>
+        <td class='col-md-8'><%= score.beer.name %></td>
+        <td class='col-md-3'><%= link_to score.rating, edit_user_score_path(score.user_id, score.id) %></td>
       </tr>
     <% end %>
   </tbody>

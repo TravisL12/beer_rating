@@ -4,30 +4,30 @@
 <table class='table'>
   <thead>
     <tr>
-      <th>Beer Number</th>
-      <th>Beer Name</th>
-      <th>Brought By</th>
-      <th>Scores</th>
+      <th>#</th>
+      <th>Name</th>
+      <th>By</th>
+      <!-- <th>Scores</th> -->
       <th>Overall Score</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @all_beers.each do |beer| %>
+    <% @all_beers.sort {|a,b| b.average <=> a.average }.each do |beer| %>
       <tr>
 
         <td class='col-md-1'><%= beer.id %></td>
-        <td class='col-md-3'><%= beer.name %></td>
-        <td class='col-md-3'><%= beer.user.name %></td>
+        <td class='col-md-4'><%= beer.name %></td>
+        <td class='col-md-4'><%= beer.user.name %></td>
 
-        <td class='col-md-4'>
+<!--         <td class='col-md-3'>
           <ul>
             <% beer.scores.each do |score| %>
               <li><%= score.rating %></li>
             <% end %>
           </ul>
-        </td>
-        <td class='col-md-4'><%= beer.average %></td>
+        </td> -->
+        <td class='col-md-1'><%= beer.average %></td>
 
       </tr>
     <% end %>
