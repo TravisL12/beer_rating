@@ -4,4 +4,7 @@ class Beer < ActiveRecord::Base
 
   attr_accessor :average
 
+  def name_with_id
+    "(#{id}) #{name}"
+  end
 end

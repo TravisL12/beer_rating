@@ -16,9 +16,9 @@
   <tbody>
     <% @scores.sort {|a,b| a.beer_id <=> b.beer_id }.each do |score| %>
       <tr>
-        <td class='col-md-1'><%= score.beer.id %></td>
-        <td class='col-md-2'><%= score.beer.name %></td>
-        <td class='col-md-2'><%= score.beer.user.name %></td>
+        <td class='col-md-0'><%= score.beer.id %></td>
+        <td class='col-md-4'><%= score.beer.name %></td>
+        <td class='col-md-4'><%= score.beer.user.name %></td>
         <td class='col-md-4'><%= link_to score.rating, edit_user_score_path(score.user_id, score.id) %></td>
       </tr>
     <% end %>
