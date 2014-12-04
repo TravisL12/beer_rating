@@ -1,9 +1,8 @@
 module PageHelper
   def average_scores(beer)
     sum = 0;
-    count = 0;
-    beer.scores.each { |score| sum += score.rating; count += 1 }
-    avg = count > 0 ? (sum/count).to_f : 0
-    "%.2g" % avg
+    count = beer.scores.size;
+    beer.scores.each { |score| sum += score.rating }
+    count > 2 ? "%.2g" % (sum/count).to_f : ''
   end
 end

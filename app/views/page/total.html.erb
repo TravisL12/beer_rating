@@ -1,35 +1,41 @@
-<h1>Overall Beer List</h1>
-<p><%= link_to 'Back', root_path %></p>
+<head>
+  <meta http-equiv="refresh" content="10" />
+</head>
+<div class='total-page'>
+  <h1 class='text-center'>Overall Beer List</h1>
+  <h3>(minimum 3 votes)</h3>
+  <p><%= link_to 'Back', root_path %></p>
 
-<table class='table'>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>By</th>
-      <!-- <th>Scores</th> -->
-      <th>Overall Score</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @all_beers.sort {|a,b| b.average <=> a.average }.each do |beer| %>
+  <table class='table total-table'>
+    <thead>
       <tr>
-
-        <td class='col-md-1'><%= beer.id %></td>
-        <td class='col-md-4'><%= beer.name %></td>
-        <td class='col-md-4'><%= beer.user.name %></td>
-
-<!--         <td class='col-md-3'>
-          <ul>
-            <% beer.scores.each do |score| %>
-              <li><%= score.rating %></li>
-            <% end %>
-          </ul>
-        </td> -->
-        <td class='col-md-1'><%= beer.average %></td>
-
+        <th>#</th>
+        <th>Name</th>
+        <th>By</th>
+        <th>Overall Score</th>
+        <!-- <th>Count</th> -->
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @all_beers.sort {|a,b| b.average <=> a.average }.each do |beer| %>
+        <tr>
+
+          <td class='col-md-1'><%= beer.id %></td>
+          <td class='col-md-4'><small><%= beer.name %></small></td>
+          <td class='col-md-4'><small><%= beer.user.name %></small></td>
+          <td class='col-md-2'><%= beer.average %></td>
+          <!-- <td class='col-md-1'><%= beer.scores.size %></td> -->
+  <!--         <td class='col-md-3'>
+            <ul>
+              <% beer.scores.each do |score| %>
+                <li><%= score.rating %></li>
+              <% end %>
+            </ul>
+          </td> -->
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

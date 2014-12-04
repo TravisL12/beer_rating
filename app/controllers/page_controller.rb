@@ -3,6 +3,7 @@ class PageController < ApplicationController
   end
 
   def total
+    @hide_banner = true
     @all_beers = Beer.all
 
     @all_beers.each do |beer|
